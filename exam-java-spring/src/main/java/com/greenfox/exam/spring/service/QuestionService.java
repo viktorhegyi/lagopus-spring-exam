@@ -31,4 +31,9 @@ public class QuestionService {
     this.questionList = questionList;
   }
 
+  public Question randomQuestion() {
+    long random = (int)((Math.random() * 7) + 1);
+    return questionRepository.findOne(random);
+  }
+
 }

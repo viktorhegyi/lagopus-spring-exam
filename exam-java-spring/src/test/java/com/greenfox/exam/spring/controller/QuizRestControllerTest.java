@@ -57,5 +57,5 @@ public class QuizRestControllerTest {
         .andExpect(jsonPath("$.id", is(1)))
         .andExpect(jsonPath("$.questions", hasSize(1)));
   }
-  
+
 }
