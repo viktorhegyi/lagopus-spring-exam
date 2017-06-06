@@ -12,7 +12,6 @@ import javax.persistence.Id;
 public class Question {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
 
   private String question;

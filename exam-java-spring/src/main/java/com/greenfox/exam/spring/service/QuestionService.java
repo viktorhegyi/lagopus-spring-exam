@@ -1,5 +1,6 @@
 package com.greenfox.exam.spring.service;
 
+import com.greenfox.exam.spring.model.Question;
 import com.greenfox.exam.spring.model.QuestionList;
 import com.greenfox.exam.spring.repository.QuestionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,4 +22,13 @@ public class QuestionService {
     questionList.setQuestionList(questionRepository.findOne(1L));
     return questionList;
   }
+
+  public QuestionList getQuestionList() {
+    return questionList;
+  }
+
+  public void setQuestionList(QuestionList questionList) {
+    this.questionList = questionList;
+  }
+
 }

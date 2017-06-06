@@ -8,5 +8,9 @@ import org.springframework.data.repository.CrudRepository;
  */
 public interface QuestionRepository extends CrudRepository<Question, Long> {
 
+  @Override
+  Question findOne(Long aLong);
 
+  @Override
+  Iterable<Question> findAll();
 }
