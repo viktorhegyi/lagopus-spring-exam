@@ -39,6 +39,6 @@ public class QuizRestControllerTest {
     this.mockMvc = webAppContextSetup(webApplicationContext).build();
   }
 
-  
+
 
 }

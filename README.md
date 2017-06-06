@@ -106,7 +106,9 @@ Your task is to create a RESTful quiz application with full of greenfox question
 
 Please define it with your own words. We are expecting at least 3 distinct ideas that you write here:
 
-
+1. if we modeling the behavior of example animals and all the animals have common method (like eating(), sleeping() ) what we want to use for all the animal subclasses.
+2. if we creating an object and we want other programmer who use this object as we designed we add abstract class to it and they have to use the methods we wrote for it
+3. if we want to declare non-static or non-final fields.
 
 ### Analyzing URL
 Please name the parts of the URL below.
