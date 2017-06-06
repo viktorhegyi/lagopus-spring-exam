@@ -33,6 +33,9 @@ public class QuizRestController {
 
   @PostMapping("/answers")
   public Object answer(@RequestBody AnswerList answerList) {
+    if (answerList.answerFromList(1).equals(answerService.getAnswerList().answerFromList(1))) {
+      return new ProjectList();
+    }
     return new ProjectList();
   }
 }
