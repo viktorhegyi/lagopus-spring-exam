@@ -2,10 +2,20 @@ package com.greenfox.exam.spring.controller;
 
 import static org.junit.Assert.*;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
+import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
+import static org.hamcrest.core.Is.is;
+import static org.hamcrest.Matchers.hasSize;
+
 
 import com.greenfox.exam.spring.ExamApplication;
 import java.nio.charset.Charset;
 import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -39,6 +49,13 @@ public class QuizRestControllerTest {
     this.mockMvc = webAppContextSetup(webApplicationContext).build();
   }
 
-
-
+  @Test
+  public void TestForTheQuestionList() throws Exception {
+    mockMvc.perform(get("/questions"))
+        .andExpect(content().contentType(contentType))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.id", is(1)))
+        .andExpect(jsonPath("$.questions", hasSize(1)));
+  }
+  
 }
